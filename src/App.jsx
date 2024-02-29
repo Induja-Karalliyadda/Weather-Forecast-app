@@ -4,6 +4,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import CarouselPage from './CarouselPage'
+import { Navbar } from 'react-bootstrap'
 
  
 
@@ -32,10 +33,10 @@ function App() {
               </div>
           </div>
         </nav>
-      {/* ------------------------- */}
-      <br />
+  
+   
       <CarouselPage></CarouselPage>
-      {/* ----------------------- */}
+      <Navbar></Navbar>
       </div> 
     </>
   )
