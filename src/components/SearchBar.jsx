@@ -1,5 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './SearchBar'
+
 
 export default function SearchBar() {
     return (
@@ -13,14 +15,10 @@ export default function SearchBar() {
                 </div>
             </div>
             <br />
+            <br />
             {/* ------------------------------------------ */}
-            <div className="container">
-            <nav className="navbar navbar-expand-lg custom-navbar">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Navbar</a>
-                </div>
-            </nav>
-        </div>
+            
+
         </div>
     );
 }
