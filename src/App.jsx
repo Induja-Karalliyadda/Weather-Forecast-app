@@ -6,16 +6,32 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import CarouselPage from './CarouselPage'
 import { Navbar } from 'react-bootstrap'
 import SearchBar from './components/SearchBar'
-
-
-
-
+import axios from 'axios'
 
 
 
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const handleSearchClick = () => {
+    let searchval = document.getElementById("searchTxt").value
+    alert(searchval);
+    let repo = {
+      methord: 'Get'
+    };
+    // axios used method
+    // axios.get(`http://api.weatherapi.com/v1/current.json?key=3de1dd892afb4f2eb6e31653242502&q=${searchval}`)
+    // .then(res=>{console.log(res.data)})
+
+    fetch(`http://api.weatherapi.com/v1/current.json?key=3de1dd892afb4f2eb6e31653242502&q=${searchval}`, repo)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        // Update state or perform other actions with the fetched data
+      })
+      .catch(error => console.log("error", error));
+  };
 
   return (
     <>
@@ -50,7 +66,20 @@ function App() {
         <br></br>
         <br></br>
         <br></br>
-        <SearchBar></SearchBar>
+        {/* searchbar */}
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <input className="form-control" id="searchTxt" type="search" placeholder="Address,City" aria-label="Search" />
+            </div>
+            <div className="col-auto">
+              <button className="btn btn-dark" id="searchBtn" onClick={handleSearchClick} type="submit">Search</button>
+            </div>
+          </div>
+          <br />
+          <br />
+        </div>
+        {/* end-searchBar */}
       </div>
       {/* Current Weathe */}
       <div className='container'>
@@ -69,9 +98,15 @@ function App() {
           </div>
         </nav>
       </div>
-
+      {/*  */}
+      <div className='container'>
+        <img src="//cdn.weatherapi.com/weather/64x64/day/176.png" alt="" srcset="" />
+        <h1 id="temp">Temp</h1>
+        <h2>Cloudy</h2>
+        <h3>country</h3>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

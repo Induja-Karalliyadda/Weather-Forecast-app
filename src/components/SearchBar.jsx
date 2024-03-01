@@ -4,14 +4,16 @@ import './SearchBar'
 
 
 export default function SearchBar() {
+   
+
     return (
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <input className="form-control" type="search" placeholder="Address,City" aria-label="Search" />
+                    <input className="form-control" id="searchTxt" type="search" placeholder="Address,City" aria-label="Search" />
                 </div>
                 <div className="col-auto">
-                    <button className="btn btn-dark" type="submit">Search</button>
+                    <button className="btn btn-dark" id="searchBtn"  type="submit">Search</button>
                 </div>
             </div>
             <br />
