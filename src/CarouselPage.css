@@ -1,4 +1,8 @@
 .img{
-    width: 1300px;
-    height: 500px;
+    width: 1296px;
+    height: 300px;
+     position: absolute;
+     object-fit: cover;
+    z-index: -1; 
+
 }
