@@ -7,14 +7,14 @@ import CarouselPage from './CarouselPage'
 import { Navbar } from 'react-bootstrap'
 import SearchBar from './components/SearchBar'
 import axios from 'axios'
+import DateTime from './DateTime'
 
 
 
 
 function App() {
   const [count, setCount,] = useState(0)
-  const [time, setTime] = useState('');
-  console.log(time)
+
 
 
 // start time
@@ -108,6 +108,8 @@ function App() {
         </nav>
       </div>
       {/*  */}
+      <br />
+      <DateTime/>
       <div className='container'>
         <img id="img" src="" alt="" srcset="" />
         <h1 id="temp">Temp</h1>
@@ -134,6 +136,123 @@ function App() {
         </nav>
       </div>
         {/* =============================== */}
+
+        <br />
+         {/* ================================ */}
+         {/* Current Weathe */}
+      <div className='container'>
+        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+          <div class="container-fluid">
+            <div class="mx-auto d-flex justify-content-center">
+              {/* <a class="navbar-brand" href="#">Current Weathe</a> */}
+            </div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarsExample08">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><p class="h5">News</p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+        {/* ================news card============== */}
+        <div className="b-example-divider"></div>
+      <div className="container px-4 py-5" id="custom-cards">
+        <h2 className="pb-2 border-bottom">World News</h2>
+        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div className="col">
+            <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style={{backgroundImage: "url('unsplash-photo-1.jpg')"}}>
+              <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+                <ul className="d-flex list-unstyled mt-auto">
+                  <li className="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" className="rounded-circle border border-white" />
+                  </li>
+                  <li className="d-flex align-items-center me-3">
+                    <svg className="bi me-2" width="1em" height="1em"><use xlinkHref="#geo-fill"/></svg>
+                    <small>Earth</small>
+                  </li>
+                  <li className="d-flex align-items-center">
+                    <svg className="bi me-2" width="1em" height="1em"><use xlinkHref="#calendar3"/></svg>
+                    <small>3d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style={{backgroundImage: "url('unsplash-photo-2.jpg')"}}>
+              <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
+                <ul className="d-flex list-unstyled mt-auto">
+                  <li className="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" className="rounded-circle border border-white" />
+                  </li>
+                  <li className="d-flex align-items-center me-3">
+                    <svg className="bi me-2" width="1em" height="1em"><use xlinkHref="#geo-fill"/></svg>
+                    <small>Pakistan</small>
+                  </li>
+                  <li className="d-flex align-items-center">
+                    <svg className="bi me-2" width="1em" height="1em"><use xlinkHref="#calendar3"/></svg>
+                    <small>4d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style={{backgroundImage: "url('unsplash-photo-3.jpg')"}}>
+              <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+                <ul className="d-flex list-unstyled mt-auto">
+                  <li className="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" className="rounded-circle border border-white" />
+                  </li>
+                  <li className="d-flex align-items-center me-3">
+                    <svg className="bi me-2" width="1em" height="1em"><use xlinkHref="#geo-fill"/></svg>
+                    <small>California</small>
+                  </li>
+                  <li className="d-flex align-items-center">
+                    <svg className="bi me-2" width="1em" height="1em"><use xlinkHref="#calendar3"/></svg>
+                    <small>5d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        {/* ================================ */}
+         {/* Current Weathe */}
+         <div className='container'>
+        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+          <div class="container-fluid">
+            <div class="mx-auto d-flex justify-content-center">
+              {/* <a class="navbar-brand" href="#">Current Weathe</a> */}
+            </div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarsExample08">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><p class="h5">Map</p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+        {/* =============================== */}
+
+
+      
+
+
+
+
+
+
+
+
       </div>
       {/* ===================================== */}
     </>
