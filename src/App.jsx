@@ -12,11 +12,17 @@ import axios from 'axios'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount,] = useState(0)
+  const [time, setTime] = useState('');
+  console.log(time)
+
+
+// start time
+
+// end time
 
   const handleSearchClick = () => {
     let searchval = document.getElementById("searchTxt").value
-    alert(searchval);
     let repo = {
       methord: 'Get'
     };
@@ -28,7 +34,10 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        // Update state or perform other actions with the fetched data
+        document.getElementById("temp").innerHTML = data.current.temp_c;
+        document.getElementById("textSample").innerHTML = data.current.condition.text;
+        document.getElementById("country").innerHTML = data.location.country;
+        document.getElementById("img").src = data.current.condition.icon;
       })
       .catch(error => console.log("error", error));
   };
@@ -100,11 +109,33 @@ function App() {
       </div>
       {/*  */}
       <div className='container'>
-        <img src="//cdn.weatherapi.com/weather/64x64/day/176.png" alt="" srcset="" />
+        <img id="img" src="" alt="" srcset="" />
         <h1 id="temp">Temp</h1>
-        <h2>Cloudy</h2>
-        <h3>country</h3>
+        <h2 id="textSample">Cloudy</h2>
+        <h3 id="country">country</h3>
       </div>
+      <div>
+        {/* ================================ */}
+         {/* Current Weathe */}
+      <div className='container'>
+        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+          <div class="container-fluid">
+            <div class="mx-auto d-flex justify-content-center">
+              {/* <a class="navbar-brand" href="#">Current Weathe</a> */}
+            </div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarsExample08">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><p class="h5">Forcast</p></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+        {/* =============================== */}
+      </div>
+      {/* ===================================== */}
     </>
   );
 }
