@@ -35,7 +35,7 @@ function App() {
     // axios.get(`http://api.weatherapi.com/v1/current.json?key=3de1dd892afb4f2eb6e31653242502&q=${searchval}`)
     // .then(res=>{console.log(res.data)})
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=3de1dd892afb4f2eb6e31653242502&q=${searchval}&days=7`, repo)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=3de1dd892afb4f2eb6e31653242502&q=${searchval}&days=7`, repo)
       .then(response => response.json())
       .then(data => {
         console.log(data);
