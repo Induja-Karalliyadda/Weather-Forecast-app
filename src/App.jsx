@@ -14,6 +14,11 @@ import DateTime from './DateTime'
 
 function App() {
   const [count, setCount,] = useState(0)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
 
 
 
@@ -60,10 +65,9 @@ function App() {
                 <a className="nav-link" href="#">Map</a>
                 <a className="nav-link disabled" aria-disabled="true">Subscribe</a>
                 {/* dark mode */} 
-                <a className="nav-link disabled" aria-disabled="true"></a>
                 <div className="form-check form-switch m-0 ">
-                  <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" defaultChecked />
-                  <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                  <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" defaultChecked={isDarkMode} onChange={toggleDarkMode} />
+                  <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Dark Mode</label>
                 </div>
                 {/* end dark mode */}
               </div>
